@@ -1,5 +1,33 @@
 #include "discord_utils.h"
 
-DiscordState initialize_discord() {
-    DiscordState state{};
+#define CLIENT_ID 1112083805747023892
+
+/**
+ * \brief Instantiates the Discord core
+ *
+ * \return discord::Core* Discord's core
+ */
+discord::Core* init_discord() {
+    discord::Core* client{};
+
+    auto result = discord::Core::Create(CLIENT_ID, DiscordCreateFlags_Default, &client);
+
+    if (!client) {
+        printf("Failed while initiating the Discord core. Error: %d.\n", static_cast<int>(result));
+        exit(-1);
+    }
+
+    return client;
+}
+
+/**
+ * \brief Updates user's activity
+ *
+ * \param client The Discord core
+ * \param activity The activity to be put into the status
+ */
+void update_activity(discord::Core* client, discord::Activity activity) {
+    client->ActivityManager().UpdateActivity(activity, [](discord::Result result) {
+        printf("%s updating activity!", (result == discord::Result::Ok ? "Succeeded at" : "Failed while"));
+    });
 }

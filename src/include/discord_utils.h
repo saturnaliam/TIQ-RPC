@@ -1,10 +1,5 @@
 #include "../discord/discord.h"
-#include <memory>
+#include <iostream>
 
-struct DiscordState {
-    discord::User current_user;
-
-    std::unique_ptr<discord::Core> core;
-};
-
-DiscordState initialize_discord();
+discord::Core* init_discord();
+void update_activity(discord::Core* client, discord::Activity activity);

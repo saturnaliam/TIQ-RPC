@@ -1,14 +1,22 @@
 #include <iostream>
+#include <ctime>
+#include <thread>
 #include "include/discord_utils.h"
 #include "discord/discord.h"
 
 int main() {
+    discord::Core* discord_client = init_discord();
 
-    printf("hi");
-    DiscordState state{};
+    discord::Activity activity{};
+    activity.SetDetails("ballin out");
+    activity.SetState("not done yet idk");
+    activity.SetType(discord::ActivityType::Playing);
+    activity.GetTimestamps().SetStart(std::time(0));
 
-    discord::Core* core{};
-    auto result = discord::Core::Create(1112083805747023892, DiscordCreateFlags_Default, &core);
+    update_activity(discord_client, activity);
 
-    state.core.reset(core);
+    while (1) {
+        discord_client->RunCallbacks();
+        std::this_thread::sleep_for(std::chrono::milliseconds(16));
+    }
 }
