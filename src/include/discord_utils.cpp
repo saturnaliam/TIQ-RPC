@@ -28,6 +28,6 @@ discord::Core* init_discord() {
  */
 void update_activity(discord::Core* client, discord::Activity activity) {
     client->ActivityManager().UpdateActivity(activity, [](discord::Result result) {
-        printf("%s updating activity!", (result == discord::Result::Ok ? "Succeeded at" : "Failed while"));
+        printf("%s", (result == discord::Result::Ok ? "" : "Failed while updating activity.\r"));
     });
 }
