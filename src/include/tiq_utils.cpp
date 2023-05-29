@@ -34,11 +34,13 @@ std::vector<std::string> init_levels() {
         levels.push_back("Beat the game!");
     }
 
-    for (int i = 342; i < 404; i++) {
+    for (int i = 342; i < 397; i++) {
         levels.push_back("ngl no clue whats going on");
     }
 
-    levels.push_back("game over :(");
+    for (int i = 398; i <= 405; i++) {
+        levels.push_back("game over :(");
+    }
 
     return levels;
 }
