@@ -9,7 +9,7 @@ This program supports Flash Player 32, 32 SA, and 11 SA. It says what question y
 1. Download the ZIP file and extract it.
 2. Open `config.toml`, and edit settings according to your needs.
 3. Open Flash Player, then open the program.
-4. Keep open the program, or your rich presence won't work.
+4. Keep the program open, or your rich presence won't work.
 
 ## Other Stuff
 
