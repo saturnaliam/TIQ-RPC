@@ -2,10 +2,12 @@
 
 how 2 setup:
 
-- number one: first go ahead and edit config.toml OR IT WONT WORK!!!
+- number one: first go ahead and edit config.toml OR IT WONT WORK RIGHT!!!
 - number two: open flash player
 - number three: run the program
 - number four: it should work and if it doesnt idfk dm me lucia#8008
+
+you need to keep the program open at all times, or your rich presence won't work!
 
 ## more info
 
