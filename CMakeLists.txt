@@ -7,6 +7,7 @@ set(EXECUTABLE_OUTPUT_PATH "${PROJECT_SOURCE_DIR}/bin")
 file(GLOB_RECURSE sources CONFIGURE_DEPENDS src/*.cpp src/*.hpp src/*.h)
 
 add_executable(main ${sources})
+set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "TIQ Rich Presence")
 
 set_property(TARGET main PROPERTY CXX_STANDARD 20)
 
