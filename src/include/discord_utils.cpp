@@ -5,7 +5,7 @@
 /**
  * \brief Instantiates the Discord core
  *
- * \return discord::Core* Discord's core
+ * \return Discord's core
  */
 discord::Core* init_discord() {
     discord::Core* client{};
@@ -28,6 +28,6 @@ discord::Core* init_discord() {
  */
 void update_activity(discord::Core* client, discord::Activity activity) {
     client->ActivityManager().UpdateActivity(activity, [](discord::Result result) {
-        printf("%s", (result == discord::Result::Ok ? "" : "Failed while updating activity.\r"));
+        printf("%s", (result == discord::Result::Ok ? "" : std::format("Failed while updating activity. Error: {}\r", static_cast<int>((result))).c_str()));
     });
 }
