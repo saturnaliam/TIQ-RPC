@@ -2,6 +2,4 @@
 #include <format>
 #include <vector>
 
-std::vector<std::string> levels;
-
-void init_levels();
+std::vector<std::string> init_levels();

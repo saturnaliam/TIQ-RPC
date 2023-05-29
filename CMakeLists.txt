@@ -7,7 +7,6 @@ set(EXECUTABLE_OUTPUT_PATH "${PROJECT_SOURCE_DIR}/bin")
 file(GLOB_RECURSE sources CONFIGURE_DEPENDS src/*.cpp src/*.hpp src/*.h)
 
 add_executable(main ${sources})
-add_compile_options(/permissive -Wall)
 
 set_property(TARGET main PROPERTY CXX_STANDARD 20)
 
