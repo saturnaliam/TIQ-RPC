@@ -121,13 +121,15 @@ int main() {
 
     printf("\r                             \rFound window!");
 
-    DWORD_PTR address = TIQ::followPointerPath(window, TIQ::offsets::FL32SA_OFFSETS);
+    DWORD_PTR address = TIQ::followPointerPath(window, ptr_path);
 
     int scene = TIQ::getScene(address, window);
     int prev_scene = scene;
 
-    if (scene >= levels.size()) goto find_window; // TODO refactor this
+    if (scene >= levels.size()) goto find_window;
     activity.SetDetails(levels[scene].c_str());
+
+    update_activity(discord_client, activity);
 
     while (1) {
         window = TIQ::findWindow(executable, window_name);
