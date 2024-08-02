@@ -1,7 +1,5 @@
 # TIQ-RPC
 
-Recently, I've really enjoyed programming for The Impossible Quiz. So, I wanted to challenge myself, so I decided to implement Discord Rich Presence!
-
 This program supports Flash Player 32, 32 SA, and 11 SA. It says what question you're on, elapsed time, and supports some customization, like how often it refreshes your status and whether or not it times out if it can't detect Flash Player.
 
 ## Setup
